@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".main.MainActivity">
+
+    <!-- Game Scene -->
+    <com.example.simulation2.main.GameScene
+        android:id="@+id/game_scene"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_day">
+    </com.example.simulation2.main.GameScene>
+
+    <!-- Title Page -->
+    <FrameLayout
+        android:id="@+id/title_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <!-- Start Scene -->
+        <LinearLayout
+            android:id="@+id/start_scene"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/title">
+            </ImageView>
+
+            <ImageButton
+                android:id="@+id/start_button"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/start_button_selector">
+            </ImageButton>
+        </LinearLayout>
+
+        <!-- Plus Logo -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_plus"
+            android:layout_gravity="center|end"
+            android:layout_marginBottom="160dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:rotation="20"/>
+
+
+        <!-- Option Scene -->
+        <FrameLayout
+            android:id="@+id/option_scene"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            android:background="#500F0F0F">
+
+            <!-- Main Option Board -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical"
+                android:gravity="top"
+                android:background="@drawable/option_board">
+
+                <!-- Avatar -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/option_text_avatar" />
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:gravity="center|bottom"
+                    android:background="#500F0F0F"
+                    android:orientation="horizontal">
+
+                    <!-- Blue Bird -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/avatar_blue"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bird_blue_avatar_selector"/>
+                        <ImageView
+                            android:id="@+id/avatar_blue_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Red Bird -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/avatar_red"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bird_red_avatar_selector"/>
+                        <ImageView
+                            android:id="@+id/avatar_red_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Yellow Bird -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/avatar_yellow"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bird_yellow_avatar_selector"/>
+                        <ImageView
+                            android:id="@+id/avatar_yellow_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Scene Speed -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/option_text_scene_speed" />
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:gravity="center|bottom"
+                    android:background="#500F0F0F"
+                    android:orientation="horizontal">
+
+                    <!-- Speed One -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/speed_one"
+                            android:layout_width="20dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_one_selector"/>
+                        <ImageView
+                            android:id="@+id/speed_one_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Speed Two -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="30dp"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/speed_two"
+                            android:layout_width="28dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_two_selector"/>
+                        <ImageView
+                            android:id="@+id/speed_two_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Speed Three -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/speed_three"
+                            android:layout_width="28dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_three_selector"/>
+                        <ImageView
+                            android:id="@+id/speed_three_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Event Frequency -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/option_text_event_frequency"/>
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:gravity="center|bottom"
+                    android:background="#500F0F0F"
+                    android:orientation="horizontal">
+
+                    <!-- Frequency One -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/frequency_one"
+                            android:layout_width="20dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_one_selector"/>
+                        <ImageView
+                            android:id="@+id/frequency_one_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Frequency Two -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="30dp"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/frequency_two"
+                            android:layout_width="28dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_two_selector"/>
+                        <ImageView
+                            android:id="@+id/frequency_two_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                    <!-- Frequency Three -->
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical"
+                        android:gravity="center|bottom">
+                        <ImageButton
+                            android:id="@+id/frequency_three"
+                            android:layout_width="28dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/option_level_three_selector"/>
+                        <ImageView
+                            android:id="@+id/frequency_three_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"
+                            android:background="@drawable/option_indicator"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/option_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|end"
+            android:scaleType="fitXY"
+            android:background="@drawable/option_icon_selector"/>
+
+    </FrameLayout>
+
+    <!-- GameOver View -->
+    <FrameLayout
+        android:id="@+id/game_over"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#500F0F0F">
+
+        <!-- GameOver Board -->
+        <LinearLayout
+            android:id="@+id/game_over_board"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/gameover_text"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="top"
+                android:background="@drawable/option_board">
+
+                <!-- New Record Text -->
+                <ImageView
+                    android:id="@+id/new_record"
+                    android:layout_width="65dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginRight="15dp"
+                    android:visibility="invisible"
+                    android:scaleType="fitXY"
+                    android:rotation="15"
+                    android:src="@drawable/gameover_new"/>
+
+                <!-- Record Score -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/gameover_record" />
+                <ImageView
+                    android:id="@+id/record"
+                    android:layout_width="175dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="45dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="top|center"/>
+
+                <!-- Your Score -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="95dp"
+                    android:src="@drawable/gameover_score" />
+                <ImageView
+                    android:id="@+id/score"
+                    android:layout_width="175dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="135dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="top|center"/>
+            </FrameLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
